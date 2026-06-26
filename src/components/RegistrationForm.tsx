@@ -3,13 +3,12 @@ import { supabase } from '../lib/supabase';
 import { CheckCircle, Circle, Loader2 } from 'lucide-react';
 
 const INTEREST_OPTIONS = [
-  'Competitive Programming',
-  'Web/App Development',
-  'Cybersecurity',
-  'Robotics & IoT',
-  'AI & Data Science',
-  'UI/UX Design',
+  'Anchoring & Public Speaking',
   'Event Management',
+  'Logistics & Operations',
+  'Social Media Management',
+  'Cultural Performance',
+  'Photography & Videography',
   'Content Writing & PR',
   'Others',
 ];
@@ -266,7 +265,7 @@ export default function RegistrationForm({
               <div className="bg-brand-orange/10 border border-brand-orange/30 rounded-lg p-5 mb-4 space-y-4">
                 <div>
                   <p className="text-sm mb-1">Please send the registration fee to the following Bkash Number (Personal):</p>
-                  <p className="font-mono text-xl font-semibold tracking-wider">017XX-XXXXXX</p>
+                  <p className="font-mono text-xl font-semibold tracking-wider">01760244646</p>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Sender Number</label>
@@ -275,9 +274,9 @@ export default function RegistrationForm({
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange text-white" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Transaction ID</label>
-                  <input required name="bkash_transaction_id" value={formData.bkash_transaction_id} onChange={handleChange}
-                    placeholder="e.g. 9F8D7E..."
+                  <label className="block text-sm font-medium mb-2">Transaction ID  </label>
+                  <input name="bkash_transaction_id" value={formData.bkash_transaction_id} onChange={handleChange}
+                    placeholder="Optional"
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange text-white" />
                 </div>
                 <div>

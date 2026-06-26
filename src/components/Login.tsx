@@ -1,6 +1,8 @@
 import React from 'react';
 import { supabase } from '../lib/supabase';
 import { LogIn, AlertCircle } from 'lucide-react';
+import { motion } from 'motion/react';
+import mascotImg from '../assets/mascot.png';
 
 export default function Login({ authError }: { authError?: string | null }) {
   const handleGoogleLogin = async () => {
@@ -26,8 +28,8 @@ export default function Login({ authError }: { authError?: string | null }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
       <div className="glass-panel p-8 md:p-12 w-full max-w-md text-center">
-        <h1 className="text-4xl font-bold mb-4">Jukti Club</h1>
-        <p className="text-white/80 mb-8 font-medium">CSE IUB Chapter Registration</p>
+        <h1 className="text-3xl font-bold mb-4">Registration Portal</h1>
+        <p className="text-white/80 mb-8 font-medium">Please sign in to proceed with registration</p>
         
         {authError && (
           <div className="bg-red-500/20 border border-red-500/50 text-red-100 px-4 py-3 rounded-lg mb-6 flex items-start text-left gap-3">
@@ -43,6 +45,32 @@ export default function Login({ authError }: { authError?: string | null }) {
           <LogIn size={20} />
           Sign in with Google
         </button>
+      </div>
+
+      <div className="fixed -bottom-2 -right-2 md:-bottom-8 md:-right-8 z-30 pointer-events-none flex items-end">
+        <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.5, x: 20, y: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: 'spring', delay: 1, bounce: 0.5 }}
+            className="absolute -top-8 right-16 md:-top-16 md:right-32 bg-white text-brand-dark px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl rounded-br-sm shadow-2xl border-2 border-brand-orange font-bold text-sm md:text-xl whitespace-nowrap z-40"
+          >
+            HEY!   
+            I'm Juro! 👋
+          </motion.div>
+          
+          <motion.div
+            initial={{ y: 200, x: 100, rotate: 0 }}
+            animate={{ y: 0, x: 0, rotate: -45 }}
+            transition={{ type: 'spring', delay: 0.2, bounce: 0.4 }}
+          >
+            <img 
+              src={mascotImg} 
+              alt="Jukti Mascot" 
+              className="w-24 md:w-56 h-auto object-contain drop-shadow-2xl translate-y-4 translate-x-4 md:translate-y-12 md:translate-x-12"
+            />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
