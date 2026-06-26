@@ -291,7 +291,7 @@ export default function RegistrationForm({
                 <p className="text-sm mb-3">Please hand over the fee to an Executive Member and enter their ID to verify.</p>
                 <label className="block text-sm font-medium mb-2">Executive ID</label>
                 <input required type="password" name="executive_id" value={formData.executive_id} onChange={handleChange}
-                  placeholder="e.g. EX-101"
+                  placeholder="An executive member will provide this to you after payment."
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-orange text-white" />
               </div>
             )}
