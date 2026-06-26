@@ -4,6 +4,7 @@ import Login from './components/Login';
 import RegistrationForm from './components/RegistrationForm';
 import Success from './components/Success';
 import { Loader2 } from 'lucide-react';
+import logoUrl from './assets/logo.png';
 
 export default function App() {
   const [session, setSession] = useState<any>(null);
@@ -115,7 +116,12 @@ export default function App() {
 
       <header className="absolute top-0 w-full z-20 p-6 flex flex-col md:flex-row items-center justify-center gap-4 fade-in">
         <div className="bg-white/10 p-2 rounded-2xl backdrop-blur-md shadow-xl border border-white/10 shadow-brand-orange/20">
-           <img src="/logo.png" alt="JUKTI Logo" className="h-16 w-16 object-contain" fallback="JUKTI" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+           <img 
+              src={logoUrl} 
+              alt="JUKTI Logo" 
+              className="h-16 w-16 object-contain" 
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-center tracking-tight animate-gradient-x text-shadow-sm">
           JUKTI - Club of CSE, IUB
