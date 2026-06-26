@@ -110,10 +110,16 @@ export default function RegistrationForm({
     const validIdsStr = import.meta.env.VITE_VALID_EXECUTIVE_IDS || '';
     const validIds = validIdsStr.split(',').map(id => id.trim()).filter(id => id);
     
-    if (validIds.length > 0 && !validIds.includes(formData.executive_id.trim())) {
-      setError('Invalid Executive ID. Please check with your executive member.');
-      setLoading(false);
-      return;
+    const enteredExecutiveId = formData.executive_id.trim();
+    let isExecutiveIdValid = false;
+
+    if (validIds.length > 0) {
+      if (!validIds.includes(enteredExecutiveId)) {
+        setError('Invalid Executive ID. Please check with your executive member.');
+        setLoading(false);
+        return;
+      }
+      isExecutiveIdValid = true;
     }
     
     const finalInterests = interests.map(i => i === 'Others' ? (otherExpertise.trim() || 'Others') : i);
@@ -125,6 +131,7 @@ export default function RegistrationForm({
           id: user.id,
           email: user.email,
           ...formData,
+          ...(isExecutiveIdValid ? { executive_id: enteredExecutiveId } : {}), // Conditionally include if valid
           fields_of_interest: finalInterests,
         }
       ]);
