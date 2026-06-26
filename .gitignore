@@ -1,0 +1,5 @@
+readme.md
+node_modules/
+.env
+assets/
+.DS_Store
