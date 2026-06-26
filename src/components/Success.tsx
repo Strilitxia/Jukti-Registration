@@ -8,15 +8,15 @@ export default function Success({ user }: { user: any }) {
   const [animationState, setAnimationState] = useState<'left' | 'none' | 'right'>('left');
 
   useEffect(() => {
-    // Leave left side after 3.5 seconds
+    // Leave left side after 2.5 seconds
     const leaveTimer = setTimeout(() => {
       setAnimationState('none');
-    }, 3500);
+    }, 2500);
 
-    // Enter right side after 4.5 seconds
+    // Enter right side after 3 seconds
     const enterTimer = setTimeout(() => {
       setAnimationState('right');
-    }, 4500);
+    }, 3000);
 
     return () => {
       clearTimeout(leaveTimer);
@@ -61,7 +61,7 @@ export default function Success({ user }: { user: any }) {
                 initial={{ opacity: 0, scale: 0.5, x: -20, y: 20 }}
                 animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, scale: 0.5, x: -20, y: 20, transition: { delay: 0 } }}
-                transition={{ type: 'spring', delay: 1, bounce: 0.5 }}
+                transition={{ type: 'spring', delay: 0.7, bounce: 0.5 }}
                 className="absolute -top--12 left-23 md:-top-20 md:left-32 bg-white text-brand-dark px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl rounded-bl-sm shadow-2xl border-2 border-brand-orange font-bold text-sm md:text-xl whitespace-nowrap z-40"
               >
                 Welcome to Juktiverse! 🎉
