@@ -153,7 +153,7 @@ export default function RegistrationForm({
     <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4">
       <div className="glass-panel p-6 md:p-10 w-full max-w-2xl">
         <h2 className="text-3xl font-bold mb-2">Complete Registration</h2>
-        <p className="text-white/70 mb-8">Please fill in your details to join Jukti Club.</p>
+        <p className="text-white/70 mb-8">Please fill in your details to join JUKTI - Club of CSE, IUB.</p>
         
         {error && (
           <div className="bg-red-500/20 border border-red-500/50 text-red-100 px-4 py-3 rounded-lg mb-6">
